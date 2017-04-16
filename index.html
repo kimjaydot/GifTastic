@@ -97,59 +97,70 @@
           method: "GET"
         }).done(function(response) {
           
-          var imgURL= response.data[i].embed_url ;
-          var gifDiv = $("<div class='gifContainer'>");
-          var image = $("<embed>").attr("src", imgURL);
+         //  // var imgURL= response.data[i].embed_url ;
+         //  // var gifDiv = $("<div class='gifContainer'>");
+         //  // var image = $("<embed>").attr("src", imgURL);
 
-          for(var i = 0; i < imgURL.length; i ++)
-          {
+         //  // for(var i = 0; i < imgURL.length; i ++)
+         //  // {
 
+         //  // console.log(response);
+         //  // // Creating a div to hold the GIFS
+         //  // // var gifDiv = $("<div class='gifContainer'>");
+         //  //  // Retrieving the URL for the image
+         //  // // var imgURL= response.data[i].embed_url ;
+         //  // // var imgURL = response.data[0].embed_url;
+         //  // // Creating an element to hold the image
+         //  // // var image = $("<embed>").attr("src", imgURL);
+         //  // // Appending the image
+         //  // gifDiv.append(image);
+
+         // }
+
+          //EDITED CODE
           console.log(response);
           // Creating a div to hold the GIFS
-          // var gifDiv = $("<div class='gifContainer'>");
+          var gifDiv = $("<div class='gifContainer'>");
            // Retrieving the URL for the image
+          var imgURL = response.data[0].embed_url;
           // var imgURL= response.data[i].embed_url ;
-          // var imgURL = response.data[0].embed_url;
           // Creating an element to hold the image
           // var image = $("<embed>").attr("src", imgURL);
+
+          var image = $('<embed>').attr('src', imgURL);
+
+          var image2 = $('<embed>').attr({
+          autoplay: 'false',
+          controller: 'false', imgURL
+          });
+
+          // var image = $("<embed>").attr({ autoplay:"false", controller:"false" } );
+
+          // autoplay="false" controller="false"
           // Appending the image
           gifDiv.append(image);
 
-         }
-
-          // //EDITED CODE
-          // console.log(response);
-          // // Creating a div to hold the GIFS
-          // var gifDiv = $("<div class='gifContainer'>");
-          //  // Retrieving the URL for the image
-          // var imgURL = response.data[0].embed_url;
-          // // var imgURL= response.data[i].embed_url ;
-          // // Creating an element to hold the image
-          // var image = $("<embed>").attr("src", imgURL);
-          // // Appending the image
-          // gifDiv.append(image);
-
-          // // Storing rating data
-          // var rating = response.data[0].rating;
-          // // Creating an element to have the rating displayed
-          // var pOne = $("<p>").text("Rating: " + rating);
-          // // Displaying the rating
-          // gifDiv.append(pOne);
-          // // Storing the source
-          // var source = response.data[0].source_tld;
-          // // Creating an element to hold source
-          // var pTwo = $("<p>").text("Source: " + source);
-          // // Displaying the source
-          // gifDiv.append(pTwo);
-          // // Storing the slug
-          // var slug = response.data[0].slug;
-          // // Creating an element to hold the slug
-          // var pThree = $("<p>").text("Slug: " + slug);
-          // // Appending the slug
-          // gifDiv.append(pThree);
+          // Storing rating data
+          var rating = response.data[0].rating;
+          // Creating an element to have the rating displayed
+          var pOne = $("<p>").text("Rating: " + rating);
+          // Displaying the rating
+          gifDiv.append(pOne);
+          // Storing the source
+          var source = response.data[0].source_tld;
+          // Creating an element to hold source
+          var pTwo = $("<p>").text("Source: " + source);
+          // Displaying the source
+          gifDiv.append(pTwo);
+          // Storing the slug
+          var slug = response.data[0].slug;
+          // Creating an element to hold the slug
+          var pThree = $("<p>").text("Slug: " + slug);
+          // Appending the slug
+          gifDiv.append(pThree);
          
-          // // Putting the entire movie above the previous movies
-          // $("#gifs-view").prepend(gifDiv);
+          // Putting the entire movie above the previous movies
+          $("#gifs-view").prepend(gifDiv);
 
           //ORIGINAL CODE
            // console.log(response);
