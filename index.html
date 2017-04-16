@@ -90,7 +90,7 @@
       function displayGifs() {
 
         var theGif = $(this).attr("data-gifs");
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=travel+world&api_key=dc6zaTOxFJmzC";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + theGif + "&api_key=dc6zaTOxFJmzC&limit=10";
         // Creating an AJAX call for the specific movie button being clicked
         $.ajax({
           url: queryURL,
