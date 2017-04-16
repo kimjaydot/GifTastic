@@ -122,17 +122,17 @@
           // Creating a div to hold the GIFS
           var gifDiv = $("<div class='gifContainer'>");
            // Retrieving the URL for the image
-          var imgURL = response.data[0].embed_url;
+          var imgURL = response.data[0].bitly_url;
           // var imgURL= response.data[i].embed_url ;
           // Creating an element to hold the image
           // var image = $("<embed>").attr("src", imgURL);
 
-          var image = $('<embed>').attr('src', imgURL);
+          var image = $('<img>').attr('src', imgURL);
 
-          var image2 = $('<embed>').attr({
-          autoplay: 'false',
-          controller: 'false', imgURL
-          });
+          // var image2 = $('<embed>').attr({
+          // autoplay: 'false',
+          // controller: 'false', imgURL
+          // });
 
           // var image = $("<embed>").attr({ autoplay:"false", controller:"false" } );
 
