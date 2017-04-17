@@ -18,7 +18,17 @@
     </form>
     <!-- GIFS will get dumped dere -->
     <div id="gifs-view"></div>
-   <!--  <div id="movies-view"></div> -->
+
+    <!--Animated Play & Stop GIFS -->
+    <!-- <img src="https://media1.giphy.com/media/qRXbdj4AJ7H32/200_s.gif" data-still="https://media1.giphy.com/media/qRXbdj4AJ7H32/200.gif_s" data-animate="http://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200.gif" data-state="still" class="gif">
+
+    <img src="https://media3.giphy.com/media/yy5WFB063ilCo/200_s.gif" data-still="https://media3.giphy.com/media/yy5WFB063ilCo/200_s.gif" data-animate="https://media3.giphy.com/media/yy5WFB063ilCo/200.gif" data-state="still" class="gif">
+
+    <img src="https://media2.giphy.com/media/wFjXRPEeZub0Q/200_s.gif" data-still="https://media2.giphy.com/media/wFjXRPEeZub0Q/200_s.gif" data-animate="https://media2.giphy.com/media/wFjXRPEeZub0Q/200.gif" data-state="still" class="gif">
+
+    <img src="https://media4.giphy.com/media/v3U0MHBTy77tm/200_s.gif" data-still="https://media4.giphy.com/media/v3U0MHBTy77tm/200_s.gif" data-animate="https://media4.giphy.com/media/l2QZRgiZ7tVW5Ola0/200.gif" data-state="still" class="gif">
+
+    <img src="https://media4.giphy.com/media/l2QZRgiZ7tVW5Ola0/200_s.gif" data-still="https://media4.giphy.com/media/l2QZRgiZ7tVW5Ola0/200_s.gif" data-animate="https://media4.giphy.com/media/l2QZRgiZ7tVW5Ola0/200.gif" data-state="still" class="gif"> -->
 
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
@@ -61,41 +71,23 @@
             gifDiv.append(p);
             gifDiv.append(p2);
            
-
             // Prependng the animalDiv to the HTML page in the "#gifs-appear-here" div
             $("#gifs-view").prepend(gifDiv);
           }
-
-        
-          // console.log(response);
-          // // Creating a div to hold the GIFS
-          // var gifDiv = $("<div class='gifContainer'>");
-          //  // Retrieving the URL for the image
-          // var imgURL = response.data[0].embed_url;
-          // // Creating an element to hold the image
-          // var image = $('<embed>').attr('src', imgURL);
-          // gifDiv.append(image);
-          // // Storing rating data
-          // var rating = response.data[0].rating;
-          // // Creating an element to have the rating displayed
-          // var pOne = $("<p>").text("Rating: " + rating);
-          // // Displaying the rating
-          // gifDiv.append(pOne);
-          // // Storing the source
-          // var source = response.data[0].source_tld;
-          // // Creating an element to hold source
-          // var pTwo = $("<p>").text("Source: " + source);
-          // // Displaying the source
-          // gifDiv.append(pTwo);
-          // // Storing the slug
-          // var slug = response.data[0].slug;
-          // // Creating an element to hold the slug
-          // var pThree = $("<p>").text("Slug: " + slug);
-          // // Appending the slug
-          // gifDiv.append(pThree);
-         
-          // // Putting the entire movie above the previous movies
-          //  $("#gifs-view").prepend(gifDiv);
+            //Pause and Stop Gifs
+            // $(".gif").on("click", function() {
+            // // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+            // var state = $(this).attr("data-state");
+            // // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+            // // Then, set the image's data-state to animate
+            // // Else set src to the data-still value
+            // if (state === "still") {
+            //   $(this).attr("src", $(this).attr("data-animate"));
+            //   $(this).attr("data-state", "animate");
+            // } else {
+            //   $(this).attr("src", $(this).attr("data-still"));
+            //   $(this).attr("data-state", "still");
+            // }
         });
       }
       
@@ -119,6 +111,7 @@
           $("#buttons-view").append(a);
         }
       }
+
       // This function handles events where a GIF button is clicked
       $("#add-gif").on("click", function(event) {
         event.preventDefault();
@@ -132,9 +125,8 @@
       // Adding a click event listener to all elements with a class of "gifStyle"
       $(document).on("click", ".gifStyle", displayGifs);
       // Calling the renderButtons function to display the intial buttons
-      renderButtons();
-
-     
+      renderButtons();     
+      
     </script>
   </div>
 </body>
