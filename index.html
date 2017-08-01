@@ -55,7 +55,7 @@
             // Creating and storing a div tag
             var gifDiv = $("<div class='gifContainer'>");
 
-             // Creating and storing an image tag
+            // Creating and storing an image tag
             var gifImage = $("<img>");
             // Setting the src attribute of the image to a property pulled off the result item
             gifImage.attr("src", results[i].images.fixed_height.url);
@@ -70,7 +70,7 @@
             gifDiv.append(gifImage);
             gifDiv.append(p);
             gifDiv.append(p2);
-           
+        
             // Prependng the animalDiv to the HTML page in the "#gifs-appear-here" div
             $("#gifs-view").prepend(gifDiv);
           }
